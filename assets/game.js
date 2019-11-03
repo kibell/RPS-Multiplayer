@@ -3,6 +3,6 @@ let p2score = 0;
 
   
 let database = firebase.database()
-console.log("hey")
+console.log(database)
 
 
