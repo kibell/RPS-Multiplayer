@@ -29,3 +29,7 @@ h3
 .mario2, .peach2, .bowser2{
 float: left;
 }
+
+.waiting{
+  background-color: yellow;
+}
