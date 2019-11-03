@@ -13,10 +13,16 @@ h2{
     
  
 }
+.displayChoice2{
+
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
+}
 
 .p2t{
   float: right;
-  clear: both;
+ 
     
     
 }
