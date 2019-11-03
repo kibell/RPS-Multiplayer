@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,63 @@
     <title>Rock Paper Scissors</title>
 
     <link rel="stylesheet" href='./assets/style.css'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 </head>
 
 
 
-<div class="container">
 
 
-    <div class="row">
-        <h1>Score</h1>
-<div class="playerone">
-    <h2>player 1</h2>
-    <p>0</p>
-</div>
 
-<div class="playertwo">
-    <h2>player 2</h2>
-    <p>0</p>
+
+
+
+
+
 </div>
 
 
+
+<body>
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="score">
+                <div class="playerone">
+                    <h2>player 1</h2>
+                    <p>0</p>
+                </div>
+    
+                <div class="playertwo">
+                    <h2>player 2</h2>
+                    <p>0</p>
+                </div>
+            </div>
+    
+            <div class="row" id="startGame">
+                <h1> Mario, Peach, Bowser</h1>
+                <button>Join Game</button>
+            </div>
+    
+    <div class ="match">
+            <h2 class = 'winner'>Select Character</h2>
+            <div class="chara">
+    
+                <img src="./assets/images/mario.png" style="width: 100px">
+    
+            </div>
+    
+    
+    
+    </div>
+    
+    
+    
+        </div>
     </div>
 
 
@@ -38,11 +74,10 @@
 
 
 
-</div>
 
-    
-   
-<body>  
-    
+
+<script src='./assets/game.js'></script>
+
 </body>
+
 </html>
