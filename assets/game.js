@@ -1,5 +1,8 @@
 let p1Score = 0;
 let p2score = 0;
+const player1 =""
+const player2 = ""
+
 
 const game ={
 numberOfConnections:0,
@@ -22,6 +25,7 @@ console.log(database)
 
 //variable needed for two players
 
+
 //Store scores when the a player wins
 
 
@@ -33,6 +37,35 @@ console.log(database)
 
 
 //listener to the database /players/ node to listen for any changes
+$('#join').on('click', function() {
+
+
+database.ref("/players/").on("value", function(snapshot) {
+	// Check for existence of player 1 in the database
+    
+    if (snapshot.child("player1").exists()) {
+		console.log("Player 1 exists");
+
+		// Record player1 data
+		player1 = snapshot.val().player1;
+		
+
+		// Update player1 display
+		
+		
+	} else {
+		console.log("Player 1 does NOT exist");
+
+		player1 = null;
+		
+
+		// Update player1 display
+		
+		
+    }
+
+});
+});
 
 
 
@@ -51,6 +84,4 @@ console.log(database)
 //game logic that recognizes when it is player 1 turn
 
 //rps logic that compares player 1 choice and player 2 choice and if player wins increase score
-
-
 
