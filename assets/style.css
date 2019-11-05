@@ -36,6 +36,6 @@ h3
 float: left;
 }
 
-.waiting{
+.waiting, .waiting1{
   background-color: yellow;
 }

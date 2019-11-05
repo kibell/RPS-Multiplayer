@@ -16,6 +16,7 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+
 <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
 </head>
@@ -39,38 +40,40 @@
              <div class=" col-md-5" style ="height: 600px;  background: linear-gradient(to left, black,gray)">
                 
                 <div class="playerone">
-                    <h2 style="clear: both;">Player 1</h2> <span class="waiting"> waiting</span>
+                    <h2 style="clear: both;">Player 1</h2> <span class="waiting1"> waiting</span>
+                    <button id="join">Join Game</button>
                     <p id="scoreBoard1"></p>
-                    <img class = "player1" src="./assets/images/mario.png" style="width: 100px; float:left; clear: both;">
-                    <button class = 'mario1' style="clear: both; float: left;">MARIO</button>
-                    <img class = "player1" src="./assets/images/Bowser.png" style="width: 100px; float:left; clear: both;">
-                    <button class = 'bowser1' style="clear: both;float: left;">BOWSER</button>
-                    <img class = "player1" src="./assets/images/Princess-Peach-PNG-Image.png" style="width: 100px; float:left; clear: both;">
+                    <img class = "player1" src="./assets/images/rock.png " style="width: 100px; float:left; clear: both;">
+                    <button class = 'mario1 btn' style="clear: both; float: left;">Rock</button>
+                    <img class = "player1 " src="./assets/images/paper.png" style="width: 100px; float:left; clear: both;">
+                    <button class = 'bowser1 btn' style="clear: both;float: left;">Paper</button>
+                    <img class = "player1" src="./assets/images/scissors.png" style="width: 100px; float:left; clear: both;">
                     
                 
                 
-                <button class = 'peach1'style="clear: both;float: left;">PEACH</button>
+                <button class = 'peach1 btn'style="clear: both;float: left;">Scissors</button>
                 </div>
 
-                <img class = "displayChoice" src="./assets/images/Princess-Peach-PNG-Image.png" style="width: 200px; margin-left: 50px; ">
+                <img class = "displayChoice" src="./assets/images/rock.png" style="width: 200px; margin-left: 50px; ">
                 
              </div>
-             <button id="join">Join Game</button>
+             
+             <button class="start">Start</button>
            
                 
              <div class=" col-md-5" style ="height: 600px;  background: linear-gradient(to left, gray,black); float:right">
                     
                 <div class = "playertwo ">
-                    <h2  class="p2t">Player 2</h2> <span class="waiting" style="float:right; clear: both;"> waiting</span>
+                    <h2  class="p2t">Player 2</h2> <span class="waiting" style="float:right; clear: both;"> waiting</span><button style="float:right; margin-right: 5px;" id="join2">Join Game</button>
                     <p id="scoreBoard2"></p>
-                    <img class ="player2" src="./assets/images/mario.png" style="width: 100px; float:right">
-                    <button class = 'mario2' style="clear: both;float: right;">MARIO</button>
-                    <img class ="player2" src="./assets/images/Bowser.png" style="width: 100px; float:right">
-                    <button class = 'bowser2' style="clear: both;float: right;">BOWSER</button>
-                    <img class ="player2" src="./assets/images/Princess-Peach-PNG-Image.png" style="width: 100px; float:right">
-                    <button class = 'peach2' style="clear: both;float: right;">PEACH</button>
+                    <img class ="player2" src="./assets/images/rock.png" style="width: 100px; float:right">
+                    <button class = 'mario2 btn' style="clear: both;float: right;">Rock</button>
+                    <img class ="player2" src="./assets/images/paper.png" style="width: 100px; float:right">
+                    <button class = 'bowser2 btn' style="clear: both;float: right;">Paper</button>
+                    <img class ="player2" src="./assets/images/scissors.png" style="width: 100px; float:right">
+                    <button class = 'peach2 btn' style="clear: both;float: right;">Scissors</button>
 
-                    <img class = "displayChoice2" src="./assets/images/Princess-Peach-PNG-Image.png" style="width: 200px; margin-left: 50px; margin-top: 90px; ">
+                    <img class = "displayChoice2" src="./assets/images/rock.png" style="width: 200px; margin-left: 50px; margin-top: 90px; ">
                 <div style="float:right">
                     
                     
@@ -89,6 +92,26 @@
     
         </div>
     
+        <div class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
  
 
 
