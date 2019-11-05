@@ -18,6 +18,20 @@
   firebase.analytics();
 
 
+const game = {
+    player1:{
+        isConnected: false
+
+    },
+
+    player2:{
+        isConnected: false
+
+    }
+
+
+}
+
 
 let p1Score = 0;
 let p2score = 0;
@@ -49,17 +63,10 @@ $('#join').on('click', function() {
 
 database.ref('/player').on("value", function(snapshot) {
     // Check for existence of player 1 in the database
-    
+   game.player1.isConnected = true
 
-    player1IsConnect = true
-   
-    database.ref().set({
 
-player1IsConnect
-
-    });
-
-    if (snapshot.child(player1IsConnect).exists()) {
+    if (game.player1.isConnected === true) {
 		console.log("Player 1 exists");
 
 		// Record player1 data
@@ -78,8 +85,15 @@ player1IsConnect
 		
     }
 
+    
+
+
+
+    });
+
 });
-});
+    
+
 
 
 
