@@ -1,26 +1,34 @@
+
+
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAzMrUCTU0KcBoVbOtQOUrSLPjNirpTfSw",
+    authDomain: "rps-database-22d63.firebaseapp.com",
+    databaseURL: "https://rps-database-22d63.firebaseio.com",
+    projectId: "rps-database-22d63",
+    storageBucket: "rps-database-22d63.appspot.com",
+    messagingSenderId: "886512432860",
+    appId: "1:886512432860:web:67939c0f1e3cbec678a619",
+    measurementId: "G-SMX6907YNE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  let database = firebase.database()
+  firebase.analytics();
+
+
+
 let p1Score = 0;
 let p2score = 0;
 const player1 =""
 const player2 = ""
 
 
-const game ={
-numberOfConnections:0,
-playerNum: 0,
-
-player1:{
-    isConnected: false
-},
-
-player2:{
-
-isConnected: false
-
-}
-
-}
+const playerRef = database.ref('/players')
+const chatRef = database.ref('/chat')
   
-let database = firebase.database()
+
 console.log(database)
 
 //variable needed for two players
@@ -39,15 +47,23 @@ console.log(database)
 //listener to the database /players/ node to listen for any changes
 $('#join').on('click', function() {
 
-
-database.ref("/players/").on("value", function(snapshot) {
-	// Check for existence of player 1 in the database
+database.ref('/player').on("value", function(snapshot) {
+    // Check for existence of player 1 in the database
     
-    if (snapshot.child("player1").exists()) {
+
+    player1IsConnect = true
+   
+    database.ref().set({
+
+player1IsConnect
+
+    });
+
+    if (snapshot.child(player1IsConnect).exists()) {
 		console.log("Player 1 exists");
 
 		// Record player1 data
-		player1 = snapshot.val().player1;
+		
 		
 
 		// Update player1 display
@@ -56,8 +72,6 @@ database.ref("/players/").on("value", function(snapshot) {
 	} else {
 		console.log("Player 1 does NOT exist");
 
-		player1 = null;
-		
 
 		// Update player1 display
 		
