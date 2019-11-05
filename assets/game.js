@@ -61,14 +61,18 @@ console.log(database)
 //listener to the database /players/ node to listen for any changes
 $('#join').on('click', function() {
 
-database.ref('/player').on("value", function(snapshot) {
+database.ref('/player/').on("value", function(snapshot) {
     // Check for existence of player 1 in the database
    game.player1.isConnected = true
 
 
     if (game.player1.isConnected === true) {
-		console.log("Player 1 exists");
 
+		console.log("Player 1 exists");
+        database.ref('/player1/').set({
+               game: `${game.player1.isConnected}`
+
+        })
 		// Record player1 data
 		
 		
