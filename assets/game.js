@@ -52,7 +52,8 @@ let p1Score = 0;
 let p2score = 0;
 const player1 = null
 const player2 = null
-
+const scoreDiv = $('#scoreBoard1')
+const scoreDiv2 = $('#scoreBoard2')
 
 const playerRef = database.ref('/players')
 const chatRef = database.ref('/chat')
@@ -185,7 +186,7 @@ database.ref('/player/').on("value", function(snapshot) {
                        paper1.show();
                         chop1.show();
                         console.log("Start");
-                        
+                        $('.start').off()
                         // Record player1 data
                         
                         
@@ -224,17 +225,47 @@ database.ref('/player/').on("value", function(snapshot) {
                             rock1.hide();
                             paper1.hide();
                             chop1.hide();
+                            paper2.show();
+                            chop2.show();
                             rock2.show();
+
                             $('.turn1').hide();
-                            $('.turn').show()
-                        if (rock2.on('click')){
-                                console.log("yes")
+                            $('.turn').show();
+                        
 
-                        }
+                    
+                        rock2.on('click', function(){
+                                console.log("yes")});
 
 
+                        paper2.on('click', function(){
+                            ++p2score
+                            scoreDiv2.text(p2score)
+                        }) ;
+                        
+                        
+                        chop2.on('click', function(){
+                            console.log("ok")
+                            p1Score ++
+                            scoreDiv.text(p1Score)
+                        });
+                    }
 
-                    })
+                    
+
+                    );
+                
+
+    function reset (){
+        $('.btn').hide();
+    $('.turn1').show();
+    $('.turn').hide();
+    rock1.show();
+    paper1.show();
+     chop1.show();
+
+
+    }
         
 
 });
