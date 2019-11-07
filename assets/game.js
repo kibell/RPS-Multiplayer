@@ -180,8 +180,10 @@ database.ref('/player/').on("value", function(snapshot) {
                 
                     if (game.player2.isConnected === true && game.player1.isConnected === true) {
                        
-                       $('.turn1').show();
-            
+                       $('.turn1').show(); 
+                       rock1.show();
+                       paper1.show();
+                        chop1.show();
                         console.log("Start");
                         
                         // Record player1 data
@@ -213,12 +215,26 @@ database.ref('/player/').on("value", function(snapshot) {
                    
                 
                     
-                
-                
-                
+        
                     });
 
 
+
+                    rock1.on('click', function(){
+                            rock1.hide();
+                            paper1.hide();
+                            chop1.hide();
+                            rock2.show();
+                            $('.turn1').hide();
+                            $('.turn').show()
+                        if (rock2.on('click')){
+                                console.log("yes")
+
+                        }
+
+
+
+                    })
         
 
 });
