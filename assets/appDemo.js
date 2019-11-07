@@ -38,15 +38,8 @@ let game = {
     
 }
 
-$('.btn').hide();
-$('.turn1').hide();
-$('.turn').hide();
-const rock1 = $('.rock1')
-const paper1 = $('.paper1')
-const chop1 = $('.scissor1')
-const rock2 = $('.rock2')
-const paper2 = $('.paper2')
-const chop2 = $('.chop2')
+
+
 
 let p1Score = 0;
 let p2score = 0;
@@ -72,25 +65,18 @@ console.log(database)
 
 //variable for the turn
 
-database.ref().on("value", function(snapshot) {
-
-//listener to the database /players/ node to listen for any changes
-$('#join').on('click', function() {
-
 database.ref('/player/').on("value", function(snapshot) {
-    // Check for existence of player 1 in the database
-   game.player1.isConnected = true
 
+//listener to the database /players/ node to listen for any change
 
-    if (game.player1.isConnected === true) {
+    if (snapshot.child(player1)) {
        
         $('.waiting1').text("Ready")
-        waitiing1 = $('.waiting1').val().trim()
+        waiting1 = $('.waiting1').val().trim()
 		console.log("Player 1 exists");
-        database.ref('/player1/').set({
-               game: `${game.player1.isConnected}`,
-                  waitiing1:waitiing1
-        })
+        game: `${game.player1.isConnected}`
+     
+        
 		// Record player1 data
 		
 		
@@ -107,6 +93,31 @@ database.ref('/player/').on("value", function(snapshot) {
 		
     }
 
+    if (game.player2.isConnected === true) {
+               
+        $('.waiting').text("Ready").set
+
+        console.log("Player 2 exists");
+        database.ref('/player2/').set({
+               game: `${game.player2.isConnected}`
+            
+        })
+        // Record player1 data
+        
+        
+
+        // Update player1 display
+        
+        
+    } else {
+        console.log("Player 2 does NOT exist");
+
+
+        // Update player1 display
+        
+        
+    }
+
     
 
 
@@ -119,7 +130,7 @@ database.ref('/player/').on("value", function(snapshot) {
 
 
 
-    });
+    
 
 
 
@@ -129,43 +140,9 @@ database.ref('/player/').on("value", function(snapshot) {
             // Check for existence of player 1 in the database
            game.player2.isConnected = true
         
-        
-            if (game.player2.isConnected === true) {
-               
-                $('.waiting').text("Ready").set
-        
-                console.log("Player 2 exists");
-                database.ref('/player2/').set({
-                       game: `${game.player2.isConnected}`
-                    
-                })
-                // Record player1 data
-                
-                
-        
-                // Update player1 display
-                
-                
-            } else {
-                console.log("Player 2 does NOT exist");
-        
-        
-                // Update player1 display
-                
-                
-            }
-        
-            
-        
-        
+    
         
             });
-        
-           
-        
-            
-        
-        
         
             });
 
@@ -180,7 +157,7 @@ database.ref('/player/').on("value", function(snapshot) {
                 
                     if (game.player2.isConnected === true && game.player1.isConnected === true) {
                        
-                       $('.turn1').show();
+                       
             
                         console.log("Start");
                         
