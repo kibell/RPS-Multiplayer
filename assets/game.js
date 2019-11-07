@@ -235,12 +235,20 @@ database.ref('/player/').on("value", function(snapshot) {
 
                     
                         rock2.on('click', function(){
-                                console.log("yes")});
+                                console.log("yes")
+                             
+                              
+                                $('.winner').text("Tie")
+                                setTimeout( reset, 3000) 
+                            });
 
 
                         paper2.on('click', function(){
-                            ++p2score
+                            ++ p2score
                             scoreDiv2.text(p2score)
+                            $('.winner').text("PLAYER 2 WINS")
+                            setTimeout( reset, 3000) 
+                            
                         }) ;
                         
                         
@@ -248,14 +256,14 @@ database.ref('/player/').on("value", function(snapshot) {
                             console.log("ok")
                             p1Score ++
                             scoreDiv.text(p1Score)
+                            $('.winner').text("PLAYER 1 WINS")
+                            setTimeout( reset, 3000) 
                         });
-                    }
-
-                    
-
-                    );
+                   
+                        
+                    });
                 
-                    paper1.on('click', function(){
+                paper1.on('click', function(){
                         rock1.hide();
                         paper1.hide();
                         chop1.hide();
@@ -269,10 +277,12 @@ database.ref('/player/').on("value", function(snapshot) {
 
                 
                     rock2.on('click', function(){
-                            console.log("yes")});
+                            console.log("yes")
                             p1Score ++
                             scoreDiv.text(p1Score)
-
+                            $('.winner').text("PLAYER 1 WINS")
+                            setTimeout( reset, 3000) 
+                    });
 
                     paper2.on('click', function(){
                         
@@ -283,8 +293,10 @@ database.ref('/player/').on("value", function(snapshot) {
                     
                     chop2.on('click', function(){
                         console.log("ok")
-                        ++p2score
+                        p2score ++
                         scoreDiv2.text(p2score)
+                        $('.winner').text("PLAYER 2 WINS")
+                            setTimeout( reset, 3000) 
                     });
                 }
 
@@ -306,21 +318,25 @@ database.ref('/player/').on("value", function(snapshot) {
 
             
                 rock2.on('click', function(){
-                        console.log("yes")});
-                        p2Score ++
-                        scoreDiv.text(p2Score)
-
+                        console.log("yes");
+                        p2score ++
+                        scoreDiv2.text(p2score)
+                        $('.winner').text("PLAYER 2 WINS")
+                            setTimeout( reset, 3000) 
+                });
 
                 paper2.on('click', function(){
-                    ++p1score
-                    scoreDiv2.text(p1score)
-
+                    p1Score ++
+                    scoreDiv.text(p1Score)
+                    $('.winner').text("PLAYER 1 WINS")
+                            setTimeout( reset, 3000) 
                     
                 }) ;
                 
                 
                 chop2.on('click', function(){
-                    console.log("ok")
+                    $('.winner').text("TIE")
+                            setTimeout( reset, 3000)
                     
                 });
             }
@@ -330,12 +346,13 @@ database.ref('/player/').on("value", function(snapshot) {
             );
 
     function reset (){
-        $('.btn').hide();
+    $('.btn').hide();
     $('.turn1').show();
     $('.turn').hide();
     rock1.show();
     paper1.show();
      chop1.show();
+     $('.winner').text("")
 
 
     }
