@@ -244,7 +244,7 @@ database.ref('/player/').on("value", function(snapshot) {
 
 
                         paper2.on('click', function(){
-                            ++ p2score
+                            + p2score
                             scoreDiv2.text(p2score)
                             $('.winner').text("PLAYER 2 WINS")
                             setTimeout( reset, 3000) 
@@ -286,7 +286,8 @@ database.ref('/player/').on("value", function(snapshot) {
 
                     paper2.on('click', function(){
                         
-
+                        $('.winner').text("TIE")
+                        setTimeout( reset, 3000)
                         
                     }) ;
                     
