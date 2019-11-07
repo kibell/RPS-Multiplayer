@@ -39,3 +39,7 @@ float: left;
 .waiting, .waiting1{
   background-color: yellow;
 }
+
+p{
+  color: aliceblue;
+}

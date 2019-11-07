@@ -255,6 +255,79 @@ database.ref('/player/').on("value", function(snapshot) {
 
                     );
                 
+                    paper1.on('click', function(){
+                        rock1.hide();
+                        paper1.hide();
+                        chop1.hide();
+                        paper2.show();
+                        chop2.show();
+                        rock2.show();
+
+                        $('.turn1').hide();
+                        $('.turn').show();
+                    
+
+                
+                    rock2.on('click', function(){
+                            console.log("yes")});
+                            p1Score ++
+                            scoreDiv.text(p1Score)
+
+
+                    paper2.on('click', function(){
+                        
+
+                        
+                    }) ;
+                    
+                    
+                    chop2.on('click', function(){
+                        console.log("ok")
+                        ++p2score
+                        scoreDiv2.text(p2score)
+                    });
+                }
+
+                
+
+                );
+
+                chop1.on('click', function(){
+                    rock1.hide();
+                    paper1.hide();
+                    chop1.hide();
+                    paper2.show();
+                    chop2.show();
+                    rock2.show();
+
+                    $('.turn1').hide();
+                    $('.turn').show();
+                
+
+            
+                rock2.on('click', function(){
+                        console.log("yes")});
+                        p2Score ++
+                        scoreDiv.text(p2Score)
+
+
+                paper2.on('click', function(){
+                    ++p1score
+                    scoreDiv2.text(p1score)
+
+                    
+                }) ;
+                
+                
+                chop2.on('click', function(){
+                    console.log("ok")
+                    
+                });
+            }
+
+            
+
+            );
 
     function reset (){
         $('.btn').hide();
